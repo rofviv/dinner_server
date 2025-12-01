@@ -29,6 +29,16 @@ def handle_disconnect():
     print('Client disconnected')
 
 
+@socketio.on('speak')
+def handle_speak(data):
+    print('Speaking: ', data['text'])
+
+
+@socketio.on('totem_event')
+def handle_totem_event(data):
+    print('Totem event: ', data['event'])
+    print('Totem data: ', data['data'])
+
 
 
 if __name__ == '__main__':
